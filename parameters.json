@@ -1,0 +1,22 @@
+[{
+    "KeyName": "KeyName",
+    "ParameterValue": "AudiCFTest"
+}, {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.small"
+} {
+    "ParameterKey": "SSHLocation",
+    "ParameterValue": "eu-central-1"
+}, {
+    "ParameterKey": "DBName",
+    "ParameterValue": "WordpressDB"
+}, {
+    "ParameterKey": "DBUser",
+    "ParameterValue": "wordpress"
+}, {
+    "ParameterKey": "DBPassword",
+    "ParameterValue": "wordpress"
+}, {
+    "ParameterKey": "DBRootPassword",
+    "ParameterValue": "wordpress"
+}]
