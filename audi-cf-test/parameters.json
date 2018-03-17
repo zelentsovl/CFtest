@@ -1,12 +1,12 @@
 [{
-    "KeyName": "KeyName",
+    "ParameterKey": "KeyName",
     "ParameterValue": "AudiCFTest"
 }, {
     "ParameterKey": "InstanceType",
     "ParameterValue": "t2.small"
-} {
+}, {
     "ParameterKey": "SSHLocation",
-    "ParameterValue": "eu-central-1"
+    "ParameterValue": "0.0.0.0/0"
 }, {
     "ParameterKey": "DBName",
     "ParameterValue": "WordpressDB"

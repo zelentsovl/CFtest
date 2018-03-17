@@ -1,6 +1,6 @@
 global:
-  owner: owner@company.com
-  qsname: .\
+  owner: lzelentsov@luxoft.com
+  qsname: audi-cf-test
   regions:
     - eu-central-1
   reporting: true
