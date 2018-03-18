@@ -1,6 +1,6 @@
 global:
   owner: lzelentsov@luxoft.com
-  qsname: audi-cf-test
+  qsname: cf-template
   regions:
     - eu-central-1
   reporting: true
