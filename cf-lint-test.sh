@@ -6,5 +6,5 @@ nvm install --lts &&
 rm -rf ./cf_lint_outputs
 mkdir ./cf_lint_outputs
 # echo "<html><head>Template validation report: </font></head><body>" > ./cf_lint_outputs/validation-report.html
-~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1  &>> ./cf_lint_outputs/validation-report.log
+~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1 | sed -r 's/'$(echo -e "\033")'\[[0-9]{1,2}(;([0-9]{1,2})?)?[mK]//g' $>> ./cf_lint_outputs/validation-report.log
 # echo "</body></html>" >> ./cf_lint_outputs/validation-report.html
