@@ -191,7 +191,7 @@
       "eu-west-1"        : {"PV64" : "ami-4cdd453f", "HVM64" : "ami-d834aba1", "HVMG2" : "ami-af8013d6"},
       "eu-west-2"        : {"PV64" : "NOT_SUPPORTED", "HVM64" : "ami-403e2524", "HVMG2" : "NOT_SUPPORTED"},
       "eu-west-3"        : {"PV64" : "NOT_SUPPORTED", "HVM64" : "ami-8ee056f3", "HVMG2" : "NOT_SUPPORTED"},
-      "eu-central-1"     : {"PV64" : "ami-6527cf0a", "HVM64" : "ami-5652ce39", "HVMG2" : "ami-1d58ca72"},
+      "eu-central-1"     : {"PV6" : "ami-6527cf0a", "HVM64" : "ami-5652ce39", "HVMG2" : "ami-1d58ca72"},
       "ap-northeast-1"   : {"PV64" : "ami-3e42b65f", "HVM64" : "ami-ceafcba8", "HVMG2" : "ami-edfd658b"},
       "ap-northeast-2"   : {"PV64" : "NOT_SUPPORTED", "HVM64" : "ami-863090e8", "HVMG2" : "NOT_SUPPORTED"},
       "ap-northeast-3"   : {"PV64" : "NOT_SUPPORTED", "HVM64" : "ami-83444afe", "HVMG2" : "NOT_SUPPORTED"},
@@ -332,7 +332,7 @@
       "Properties": {
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
                           { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
-        "InstanceType"   : { "Ref" : "InstanceTyp" },
+        "InstanceType"   : { "Ref" : "InstanceType" },
         "SecurityGroups" : [ {"Ref" : "WebServerSecurityGroup"} ],
         "KeyName"        : { "Ref" : "KeyName" },
         "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
