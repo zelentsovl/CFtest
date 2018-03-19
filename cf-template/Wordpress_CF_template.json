@@ -220,8 +220,8 @@
     },
 
     "WebServer": {
-      "Typ" : "AWS::EC2::Instance",
-      "Metadata" : {
+      "Type" : "AWS::EC2::Instance",
+      "Metdata" : {
         "AWS::CloudFormation::Init" : {
           "configSets" : {
             "wordpress_install" : ["install_cfn", "install_wordpress", "configure_wordpress" ]
