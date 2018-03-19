@@ -5,5 +5,5 @@ nvm install --lts &&
 ~/.nvm/versions/node/v8.10.0/bin/npm install -g cfn-lint && 
 rm -rf ./cf_lint_outputs
 mkdir ./cf_lint_outputs
-~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1 | sed -r 's/'$(echo -e "\033")'\[[0-9]{1,2}(;([0-9]{1,2})?)?[mK]//g' >> ./cf_lint_outputs/validation-report.log 2>&1
-#~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1 &>> ./cf_lint_outputs/validation-report.log
+#~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1 | sed -r 's/'$(echo -e "\033")'\[[0-9]{1,2}(;([0-9]{1,2})?)?[mK]//g' >> ./cf_lint_outputs/validation-report.log 2>&1
+~/.nvm/versions/node/v8.10.0/bin/cfn-lint validate $1 &>> ./cf_lint_outputs/validation-report.log
