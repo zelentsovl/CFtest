@@ -1,6 +1,6 @@
 global:
   owner: lzelentsov@luxoft.com
-  qsname: cf-template
+  qsname: vpc
   regions:
     - eu-central-1
   reporting: true
@@ -8,6 +8,6 @@ tests:
   scenario-1:
     regions:
       - eu-central-1
-    template_file: Wordpress_CF_template.json
+    template_file: vpc.json
     parameter_input: parameters.json
   
