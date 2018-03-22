@@ -1,6 +1,6 @@
 [{
     "ParameterKey": "KeyName",
-    "ParameterValue": "AudiCFTest2"
+    "ParameterValue": "AudiCFtest2"
 }, {
     "ParameterKey": "InstanceType",
     "ParameterValue": "t2.small"
