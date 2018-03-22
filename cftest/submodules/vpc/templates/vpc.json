@@ -2,7 +2,7 @@
   "AWSTemplateFormatVersion" : "2010-09-09",
 
   "Parameters" : {
-    "VPCCidr" : {
+    "VPCCidr" : 
       "Type" : "String",
       "Default" : "10.0.0.0/16",
       "Description" : "Enter the CIDR block for the VPC. Default is 10.0.0.0/16."
@@ -10,7 +10,7 @@
   },
 
   "Resources" : {
-    "my-vpc": {
+    "myvpc": {
       "Type" : "AWS::EC2::VPC",
       "Properties" : {
         "CidrBlock" : { "Ref" : "VPCCidr" },
