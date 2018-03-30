@@ -5,7 +5,7 @@
 
   "Parameters" : {
 
-    "KeyName" {
+    "KeyName": 
       "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
       "Type": "AWS::EC2::KeyPair::KeyName",
       "ConstraintDescription" : "must be the name of an existing EC2 KeyPair."
@@ -208,12 +208,22 @@
   },
 
   "Resources" : {
+
+    "NestedStack" : {
+      "Type" : "AWS::CloudFormation::Stack",
+      "Properties" : {
+         "TemplateURL" : "https://s3.eu-central-1.amazonaws.com/cftest-audi/cftest/submodules/vpc/templates/vpc.json"                      
+      }
+    },
+
     "WebServerSecurityGroup" : {
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
         "GroupDescription" : "Enable HTTP access via port 80 locked down to the load balancer + SSH access",
-        "SecurityGroupIngress" : 
-          [ {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}} ]
+        "SecurityGroupIngress" : [
+          {"IpProtocol" : "tcp", "FromPort" : "80", "ToPort" : "80", "CidrIp" : "0.0.0.0/0"},
+          {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}}
+        ]  
       }
     },
 
@@ -331,7 +341,7 @@
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
                           { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
         "InstanceType"   : { "Ref" : "InstanceType" },
-        "SecurityGroups" : {"Ref" : "WebServerSecurityGroup"},
+        "SecurityGroups" : [ {"Ref" : "WebServerSecurityGroup"} ],
         "KeyName"        : { "Ref" : "KeyName" },
         "UserData" : { "Fn::Base64" : {"Fn::Join" : ["", [
                        "#!/bin/bash -xe\n",
@@ -364,3 +374,4 @@
     }
   }
 }
+
