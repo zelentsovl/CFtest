@@ -212,7 +212,7 @@
     "NestedStack" : {
       "Type" : "AWS::CloudFormation::Stack",
       "Properties" : {
-         "TemplateURL" : "https://s3.eu-central-1.amazonaws.com/cftest-audi/cftest/submodules/vpc/templates/vpc.json"                      
+         "TemplateURL" : "https://s3.eu-central-1.amazonaws.com/cftest-audi2/cftest/submodules/vpc/templates/vpc.json"                      
       }
     },
 
