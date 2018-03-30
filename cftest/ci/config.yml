@@ -1,7 +1,7 @@
 global:
   owner: lzelentsov@luxoft.com
   qsname: cftest
-  s3bucket: cftest-audi
+  s3bucket: cftest-audi2
   regions:
     - eu-central-1
   reporting: true
