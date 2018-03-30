@@ -5,7 +5,7 @@
 
   "Parameters" : {
 
-    "KeyName": {
+    "KeyName" {
       "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
       "Type": "AWS::EC2::KeyPair::KeyName",
       "ConstraintDescription" : "must be the name of an existing EC2 KeyPair."
@@ -312,7 +312,7 @@
           "configure_wordpress" : {
             "commands" : {
               "01_set_mysql_root_password" : {
-                "command" : { "Fn::Jon" : ["", ["mysqladmin -u root password '", { "Ref" : "DBRootPassword" }, "'"]]},
+                "command" : { "Fn::Join" : ["", ["mysqladmin -u root password '", { "Ref" : "DBRootPassword" }, "'"]]},
                 "test" : { "Fn::Join" : ["", ["$(mysql ", { "Ref" : "DBName" }, " -u root --password='", { "Ref" : "DBRootPassword" }, "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"]]}
               },
               "02_create_database" : {
@@ -331,7 +331,7 @@
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
                           { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
         "InstanceType"   : { "Ref" : "InstanceType" },
-        "SecurityGroups" : [ {"Ref" : "WebServerSecurityGroup"} ],
+        "SecurityGroups" : {"Ref" : "WebServerSecurityGroup"},
         "KeyName"        : { "Ref" : "KeyName" },
         "UserData" : { "Fn::Base64" : {"Fn::Join" : ["", [
                        "#!/bin/bash -xe\n",
