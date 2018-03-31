@@ -9,6 +9,4 @@ tests:
   scenario-1:
     regions:
       - eu-central-1
-    template_file: EnableAWSConfig.yml
-    parameter_input: parameters.json
-  
+    template_file: EnableAWSConfig.yml  
