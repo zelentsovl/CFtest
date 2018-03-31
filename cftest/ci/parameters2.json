@@ -1,0 +1,22 @@
+[{
+    "ParameterKey": "KeyName",
+    "ParameterValue": "testkeypair"
+}, {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.small"
+}, {
+    "ParameterKey": "SSHLocation",
+    "ParameterValue": "0.0.0.0/0"
+}, {
+    "ParameterKey": "DBName",
+    "ParameterValue": "WordpressDB"
+}, {
+    "ParameterKey": "DBUser",
+    "ParameterValue": "wordpress"
+}, {
+    "ParameterKey": "DBPassword",
+    "ParameterValue": "wordpress"
+}, {
+    "ParameterKey": "DBRootPassword",
+    "ParameterValue": "wordpress"
+}]
